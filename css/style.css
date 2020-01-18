@@ -1,0 +1,733 @@
+@font-face {
+    font-family: OpenSans; 
+    src: url('../fonts/OpenSans-Light.ttf');
+}
+/* @font-face {
+    font-family: OpenSans;
+    font-weight: lighter;
+    src: url('font/OpenSans-Light.ttf');
+} */
+
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family : OpenSans;
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: rgb(255, 209, 209);
+}
+
+a, a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    font-size: 17px;
+}
+button:focus {outline: 0;}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* - Home Screen CSS - */
+.hero {
+    transition: 0.3s;
+    background: url('../images/olympic-wall.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background-attachment: fixed;
+}
+
+.hero-text {
+    animation-name: loadUp;
+    animation-duration: 2s;
+}
+
+.hero h1 {
+    color: white;
+    /* margin-top: -80px; */
+    
+    font-size: 30px;
+}
+
+.hero h2 {
+    color: white;
+    font-size: 50px;
+}
+
+.home-btn {
+    transition: 0.3s;
+    border: 2px solid #be182e;
+    border-radius: 20px;
+    background-color: #ff2542;
+    margin-top: 30px; 
+    height: 50px;
+    width: 150px;
+}
+
+.home-btn:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+
+/* - Nav Bar CSS - */
+.nav-bar {
+    background-color: rgb(255, 255, 255);
+    /* overflow: hidden; */
+    height: 75px;
+    width: 100%;
+    top: 0;
+    box-shadow: 0px 1px 3px rgb(139, 139, 139);
+    text-align: center;
+}
+
+.nav-bar .logo {
+    display: inline-block;
+    padding: 20px 0 0 25px;
+    font-size: 25px;
+}
+
+.nav-bar li {
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: 0.3s;
+    display: inline-flex;
+}
+
+.nav-bar li a {
+    padding: 10px 20px;
+}
+
+.nav-bar .icon {
+    display: none;
+}
+
+.nav-bar li a:hover {
+    color: #ff5f74;
+}
+
+/* CSS for when Nav Bar is sticky */
+.sticky {
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+}
+
+.sticky + .content {
+    padding-top: 75px;
+}
+
+/* About Section CSS */
+.about-section {
+    margin: 0 auto;
+    padding: 16px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    height: 900px;
+}
+
+#about-anchor {
+    padding-top: 180px;
+    margin-top: -180px;
+}
+
+.about-section h3 {
+    text-align: center;
+    animation-name: about-pulse;
+    animation-duration: 2.5s;
+    animation-iteration-count:infinite;
+
+}
+
+/* Map Location CSS */
+.map {
+    height: 450px;
+}
+
+.map h4 {
+    text-align: center;
+}
+
+/* Club News Section CSS */
+.club-news-section {
+    background: url("../images/Zhang-Jike.jpg");
+    background-size: cover;
+}
+
+.club-news-section .container {
+    padding: 100px 0px 0px;
+}
+
+.club-news-section h3 {
+    text-align: center;
+    color: white;
+}
+
+.club-news-section p {
+    color: white;
+}
+
+.club-news-section hr {
+    border-top: 1px solid white;
+    margin-bottom: 70px;
+}
+
+.club-news-section .container {
+    text-align: center;
+}
+
+.paddle {
+    width: 500px;
+    height: 810px;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.paddle:hover {
+    opacity: 1;
+}
+
+.panel {
+    position: relative;
+    padding: 30px;
+    width: 100%;
+    height: 540px;
+    border-radius: 140px;
+}
+
+.panel h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.panel p {
+    margin: 5px;
+}
+
+.panel.news {
+    background-color: #fa5252;
+    z-index: 1;
+}
+
+.panel.register {
+    background-color: rgb(26, 26, 26);
+}
+
+
+.handle {
+    position: relative;
+    background-color: rgb(248, 168, 77);
+    width: 115px;
+    height: 170px;
+    margin: 0 auto;
+}
+
+
+.handle.news {
+    border-radius: 0 0 20px 20px;
+    z-index: 3;
+}
+
+.handle.register {
+    border-radius: 20px 20px 0 0;
+}
+
+.paddle-content {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.panel button {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 25px;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    width: 170px;
+    height: 60px;
+    border: none;
+    transition: 0.3s;
+}
+
+.panel button:hover {
+    background-color: #d13348;
+}
+
+.paddle .important {
+    font-weight: bold;
+    animation-name: pulse-white;
+    animation-duration: 2.5s;
+    animation-iteration-count:infinite;
+}
+
+.pshadow {
+    box-shadow: 0 14px 28px rgba(255, 0, 0, 0.3), 0 10px 10px rgba(255, 0, 0, 0.3);
+}
+
+/* Resources Section CSS */
+.resources-section {
+    background: url("../images/ma-long.png");
+    background-size: cover;
+}
+
+.resources-section .container {
+    padding: 100px 0px 100px;
+}
+
+.resources-section h3 {
+    color: white;
+    text-align: center;
+}
+
+.resources-section hr {
+    border-top: 1px solid white;
+    margin-bottom: 70px;
+}
+
+.resources-section .button-holder {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.button-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    top: 30px;
+    padding: 20px;
+}
+
+.resources-section button {
+    position: relative;
+    border-radius: 15px;
+    margin: 20px 20px 20px;
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    height: 330px;
+    border: none;
+    transition: 0.3s;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.resources-section h1 {
+    font-size: 30px;
+}
+
+.resources-section button img {
+    width: 100%;
+    /* height: 300px; */
+    padding: 10px;
+}
+
+.resources-section button:hover {
+    background-color: pink;
+    box-shadow: 0 14px 28px rgba(255, 0, 0, 0.3), 0 14px 28px rgba(255, 0, 0, 0.3);
+}
+
+/* Rules Section CSS */
+
+.rules-section {
+    padding: 16px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.rules-section h3 {
+    margin-top: 100px;
+}
+
+.rule-card {
+    padding: 20px;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0, 0, 0, 0.055);
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.rule-card h1 {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.rule-card p {
+    margin-top: 20px;
+}
+
+.rule-card:hover {
+    border-radius: 10px;
+    box-shadow:0 2px 5px 0 rgba(255, 0, 0, 0.3),0 2px 10px 0 rgba(0, 0, 0, 0.016);
+
+}
+
+
+/* Slideshow Section CSS */
+.slideshow-section {
+    background-color: rgb(255, 255, 255);
+    padding: 16px;
+    margin: 0 auto;
+}
+
+.slideshow-section h3 {
+    margin-top: 100px;
+}
+
+.slideshow-section hr {
+    margin-bottom: 50px;
+}
+
+.slideshow-container {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.slide {
+    z-index: 1;
+    display: none;
+}
+
+.slide img {
+    
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.slide p {
+    font-size: 10px;
+    margin: 0 auto;
+}
+
+/* CHANGE THIS I DON"T WANT plagiarize */
+    .prev-button, .next-button { 
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        font-size: 40px;
+        transition: 0.9s;
+        padding: 0px 15px 0px;
+        margin-top: -15px;
+        opacity: 0.4;
+
+
+        /* 
+        width: auto;
+        margin-top: -22px;
+        transition: 0.6s ease;
+        user-select: none;
+         */
+    }
+
+    .prev-button {
+        border-radius: 0 20px 20px 0;
+    }
+
+    .next-button {
+        border-radius:  20px 0px 0px 20px;
+    }
+
+    .prev-button .fa-cog, .next-button .fa-cog {
+        color: white;
+    }
+
+    .next-button {
+        right: 0;
+    }
+
+    .prev-button:hover, .next-button:hover {
+        opacity: 1;
+        background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .slide-caption {
+        color: #f2f2f2;
+        text-shadow: 1px 1px black;
+        font-weight: bold;
+
+        font-size: 20px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+/* 
+    .slide-caption p{
+        background-color: rgba(0, 0, 0, 0.459);
+    } */
+
+
+/* Contact Section CSS */
+.contact-section h3 {
+    color: white;
+}
+
+.chip-holder {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+    box-shadow: 0px 1px 0px rgb(0, 0, 0);
+}
+
+
+.contact-chip {
+    position: relative;
+    background-color: rgb(53, 53, 53);
+    display: inline-block;
+    width: 275px;
+    height: 60px;
+    text-align: center;
+    border-radius: 50px;
+    color: white;
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    transition: 0.4s;
+}
+
+.contact-chip:hover {
+    background-color: #d15757;
+}
+
+.chip-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 10px;
+}
+
+.contact-chip h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* .contact-container {
+    width: 50%;
+    margin: auto;
+}
+
+
+
+.contact-form input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+} */
+
+
+/* FOOTER CSS */
+footer {
+    background-color: rgb(34, 34, 34);
+    margin: 0;
+    border: solid;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* color: white; */
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Animations */
+@keyframes loadUp {
+    0% {
+        margin-top: 600px;
+        opacity: 0;
+    }
+    100% {
+        margin-top: -80px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {background-color: rgba(0, 0, 0, 0);}
+    100% {background: rgba(0, 0, 0, 0.253);}
+}
+
+@keyframes about-pulse {
+    0% {color: black;}
+    50% {color: rgb(255, 88, 124);}
+    100% {color: black;}
+}
+
+@keyframes pulse-white {
+    0% {color: white;}
+    50% {color: rgb(150, 255, 51);}
+    100% {color: white;}
+}
+
+/* Change the CSS depending on screensize -> RESPONSIVE */
+
+@media only screen and (min-width: 500px) {
+    .about-section {
+        width: 500px;
+    }
+
+    .rules-section {
+        width: 500px
+    }
+
+    .slide-caption p {
+        width: 500px;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .about-section {
+        width: 350px;
+    }
+
+    .club-news-section .container {
+        padding: 0px;
+    }
+
+    .paddle {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .contact-chip {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .about-section {
+        width: 1000px;
+        height: 550px;
+        margin-bottom: 200px;
+    }
+
+    .about-section p {
+        width: 50%;
+        padding: 20px 30px;
+        float: left;
+    }
+    .about-section .map {
+        width: 50%;
+        float: right;
+    }
+
+    .rules-section {
+        width: 1000px;
+    }
+
+    .slideshow-section {
+        width: 100%;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    .slideshow-container {
+        width: 1200px;
+    }
+}
+
+/* RESPONSIVE NAVBAR */
+@media screen and (max-width: 1150px) {
+    .nav-bar {
+        text-align: left;
+    }
+
+    .nav-bar li {
+        display: none;
+    }
+
+    .nav-bar .logo {
+        display: inline-block;
+    }
+
+    .nav-bar .icon {
+        float: right;
+        display: inline-flex;
+        margin-top: 20px;
+    }
+
+    .nav-bar.toggle {
+        height: auto;
+    }
+    .nav-bar.toggle .navbar-holder {
+        position: relative;
+    }
+
+    .nav-bar.toggle .icon {
+        position: absolute;
+        right: 0;
+        top: 10px;
+    }
+
+    .fa-bars {
+        font-size: 20px;
+    } 
+    .redHover:hover {
+        color: #ff2542;
+    }
+
+    .nav-bar.toggle li {
+        text-align: center;
+        display: block;
+    }
+
+    .nav-bar.toggle li:not(.icon) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .nav-bar.toggle li:not(.icon):hover {
+        background-color: #fc3e57;
+        /* border: 2px solid #be182e; */
+        border-radius: 20px;
+    }
+
+    .nav-bar.toggle li a:hover {
+        color: black;
+    }
+}
+
