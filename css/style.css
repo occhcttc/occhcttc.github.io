@@ -297,15 +297,21 @@ button:focus {outline: 0;}
 
 /* Calendar Section CSS */
 
+.calendar-section h3 {
+    text-align: center;
+    margin-top: 100px;
+}
+
 .calendar-section {
-    background-color: rgb(249, 249, 249);
+    background-color: rgb(255, 255, 255);
     background-size: cover;
     text-align: center;
 }
 
 .calendar-section iframe {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 0;
+    width: 100%;
+    /* margin-bottom: 100px; */
     /* background-color: green; */
 }
 
@@ -641,6 +647,7 @@ footer p {
 
     .club-news-section .container {
         padding: 0px;
+        padding-top: 100px;
     }
 
     .paddle {
