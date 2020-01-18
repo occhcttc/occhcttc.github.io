@@ -295,6 +295,21 @@ button:focus {outline: 0;}
     box-shadow: 0 14px 28px rgba(255, 0, 0, 0.3), 0 10px 10px rgba(255, 0, 0, 0.3);
 }
 
+/* Calendar Section CSS */
+
+.calendar-section {
+    background-color: rgb(249, 249, 249);
+    background-size: cover;
+    text-align: center;
+}
+
+.calendar-section iframe {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    /* background-color: green; */
+}
+
+
 /* Resources Section CSS */
 .resources-section {
     background: url("../images/ma-long.png");
@@ -637,6 +652,7 @@ footer p {
     .contact-chip {
         margin: 0;
     }
+
 }
 
 @media only screen and (min-width: 1000px) {
