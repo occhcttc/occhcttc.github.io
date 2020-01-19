@@ -49,14 +49,14 @@ button:focus {outline: 0;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     text-align: center;
 
     background-attachment: fixed;
 }
 
 .hero-text {
-    margin-top: 250px;
+    margin-top: 130px;
     animation-name: loadUp;
     animation-duration: 2s;
 }
@@ -87,6 +87,10 @@ button:focus {outline: 0;}
     margin-top: 30px; 
     height: 50px;
     width: 150px;
+    margin-bottom: 200px;
+
+    /* animation-name: buttonLoadIn;
+    animation-duration: 5s; */
 }
 
 .home-btn:hover {
@@ -617,23 +621,21 @@ footer p {
         opacity: 0;
     }
     100% {
-        margin-top: 250px;
+        margin-top: 130px;
         opacity: 1;
     }
 }
 
 @keyframes logoLoadIn {
-    0% {
-        opacity: 0;
-    }
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
 
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
+@keyframes buttonLoadIn {
+    0% {opacity: 0;}
+    80% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 @keyframes fadeIn {
