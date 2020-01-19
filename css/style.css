@@ -102,7 +102,7 @@ button:focus {outline: 0;}
 
 /* - Nav Bar CSS - */
 .nav-bar {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.945);
     /* overflow: hidden; */
     height: 75px;
     width: 100%;
@@ -134,6 +134,7 @@ button:focus {outline: 0;}
 }
 
 .nav-bar li a {
+    transition: 0.3s;
     padding: 10px 20px;
 }
 
