@@ -29,6 +29,7 @@ a, a:hover {
 p {
     font-size: 17px;
 }
+
 button:focus {outline: 0;}
 
 .content {
@@ -48,15 +49,22 @@ button:focus {outline: 0;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: center;
 
     background-attachment: fixed;
 }
 
 .hero-text {
+    margin-top: 250px;
     animation-name: loadUp;
     animation-duration: 2s;
+}
+
+.hero-text img {
+    animation-name: logoLoadIn;
+    animation-duration: 4s;
+    width: 300px;
 }
 
 .hero h1 {
@@ -101,8 +109,17 @@ button:focus {outline: 0;}
 
 .nav-bar .logo {
     display: inline-block;
-    padding: 20px 0 0 25px;
+    margin-top: 0px;
+    margin-right: -20px;
+    padding: 7px 0 0 0px;
     font-size: 25px;
+    /* width: 10px;
+    height: 10px; */
+}
+
+.nav-bar .logo img {
+    width: 90px;
+    /* height: 100px; */
 }
 
 .nav-bar li {
@@ -169,7 +186,7 @@ button:focus {outline: 0;}
 
 /* Club News Section CSS */
 .club-news-section {
-    background: url("../images/Zhang-Jike.jpg");
+    background: url("../images/Zhang-Jike.png");
     background-size: cover;
 }
 
@@ -596,11 +613,25 @@ footer p {
 /* Animations */
 @keyframes loadUp {
     0% {
-        margin-top: 600px;
+        margin-top: 700px;
         opacity: 0;
     }
     100% {
-        margin-top: -80px;
+        margin-top: 250px;
+        opacity: 1;
+    }
+}
+
+@keyframes logoLoadIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
         opacity: 1;
     }
 }
@@ -704,6 +735,7 @@ footer p {
 
     .nav-bar .logo {
         display: inline-block;
+        margin-right: 0px;
     }
 
     .nav-bar .icon {
