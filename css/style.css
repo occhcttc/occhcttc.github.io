@@ -679,8 +679,7 @@ footer p {
     }
 
     .club-news-section .container {
-        padding: 0px;
-        padding-top: 100px;
+        padding: 100px 10px 0px;
     }
 
     .paddle {
