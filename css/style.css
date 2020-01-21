@@ -127,24 +127,24 @@ button:focus {outline: 0;}
 }
 
 .nav-bar li {
-    margin-left: 20px;
-    margin-right: 20px;
-    transition: 0.3s;
-    display: inline-flex;
+    margin: 0 20px 0 20px;      /* Give each button a margin of 20px on the left and right */
+    transition: 0.3s;           /* Changes to the CSS should take 0.3s to make the hover effect look nicer */
+    display: inline-flex;       /* Makes it so all the buttons are on the same line (same level) */
 }
 
 .nav-bar li a {
-    transition: 0.3s;
-    padding: 10px 20px;
+    transition: 0.3s;          
+    padding: 10px 20px;         /* Give each button some padding (so spacing looks nicer) */
+}
+
+.nav-bar li a:hover {
+    color: #ff5f74;           /* When the buttom is hovered over, it changes color to light red */
 }
 
 .nav-bar .icon {
     display: none;
 }
 
-.nav-bar li a:hover {
-    color: #ff5f74;
-}
 
 /* CSS for when Nav Bar is sticky */
 .sticky {
@@ -451,87 +451,73 @@ button:focus {outline: 0;}
 }
 
 .slideshow-container {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    margin-bottom: 100px;
+    margin: 0 auto;             /* Horizontally aligns the slideshow on the page */
+    position: relative;         /* Makes the absolute position of the slides relative to the container's position */
+    width: 100%;                /* Makes the width of the slideshow 100% of its available area */
+    margin-bottom: 100px;       /* Creates a margin of 100px at the bottom of the slideshow */
 }
 
 .slide {
-    z-index: 1;
-    display: none;
+    display: none;              /* By default the slides are invisible (we use Javascript to make only one slide visible) */
 }
 
 .slide img {
-    
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
+    width: 100%;                /* Make the image cover 100% of the slideshow container */
+    height: 100%;               /* Same as the previous line */
+    border-radius: 50px;        /* Makes the images have rounded corners (for aesthetic purposes) */
+}
+
+
+.prev-button, .next-button { 
+    position: absolute;         /* Makes the positions of the buttons relative to the container's position*/
+    top: 50%;                   /* Makes the buttons appear 50% from the top of the container */
+    margin-top: -15px;          /* Move the buttons 15px up (to perfectly vertically center them) */
+    cursor: pointer;            /* The cursor changes to a pointer after hovering the buttons */
+    font-size: 40px;            /* Increase the size of the icons in the buttons */
+    transition: 0.9s;           /* Changes to the CSS take 0.9s to complete (to make animations look nicer) */
+    padding: 0px 15px 0px;      /* Increase the size of the buttons by adding padding */
+    opacity: 0.4;               /* The buttons will have an opacity of 0.4 */
+
+}
+
+.prev-button {
+    border-radius: 0 20px 20px 0;
+}
+
+.next-button {
+    border-radius:  20px 0px 0px 20px;
+}
+
+.prev-button .fa-cog, .next-button .fa-cog {
+    color: white;
+}
+
+.next-button {
+    right: 0;
+}
+
+.prev-button:hover, .next-button:hover {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slide-caption {
+    color: #f2f2f2;                 /* Make the color of the caption white */
+    text-shadow: 1px 1px black;     /* Give a text a shadow so that it is easier to see */
+    font-weight: bold;                /* Make the text bold */
+    padding: 8px 12px;                /* Give some padding to the text so it doesn't appear cramped */
+    font-size: 10px;                  /* Make the caption font size 10 */
+    position: absolute;               /* Make the position of the caption relative to the slide */
+    bottom: 8px;                      /* Move the caption up 8px */
+    width: 100%;                      /* Make the caption div take up 100% of the width of the img */
+    text-align: center;               /* Make the text centered */
 }
 
 .slide p {
-    font-size: 10px;
-    margin: 0 auto;
+    margin: 0 auto;             /* Ensures that the captions appear centered horizontally on the image*/
 }
 
-/* CHANGE THIS I DON"T WANT plagiarize */
-    .prev-button, .next-button { 
-        position: absolute;
-        top: 50%;
-        cursor: pointer;
-        font-size: 40px;
-        transition: 0.9s;
-        padding: 0px 15px 0px;
-        margin-top: -15px;
-        opacity: 0.4;
 
-
-        /* 
-        width: auto;
-        margin-top: -22px;
-        transition: 0.6s ease;
-        user-select: none;
-         */
-    }
-
-    .prev-button {
-        border-radius: 0 20px 20px 0;
-    }
-
-    .next-button {
-        border-radius:  20px 0px 0px 20px;
-    }
-
-    .prev-button .fa-cog, .next-button .fa-cog {
-        color: white;
-    }
-
-    .next-button {
-        right: 0;
-    }
-
-    .prev-button:hover, .next-button:hover {
-        opacity: 1;
-        background-color: rgba(0,0,0,0.8);
-    }
-    
-    /* Caption text */
-    .slide-caption {
-        color: #f2f2f2;
-        text-shadow: 1px 1px black;
-        font-weight: bold;
-
-        font-size: 20px;
-        padding: 8px 12px;
-        position: absolute;
-        bottom: 8px;
-        width: 100%;
-        text-align: center;
-    }
-/* 
-    .slide-caption p{
-        background-color: rgba(0, 0, 0, 0.459);
-    } */
 
 
 /* Contact Section CSS */
