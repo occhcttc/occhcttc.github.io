@@ -13,6 +13,6 @@ function setCalendarSize() {
 
     var width = calendar.clientWidth;
     // console.log(width);
-    var height = width / (8/6);
+    var height = width / (8/5);
     calendar.style.height = height + "px";
 }
